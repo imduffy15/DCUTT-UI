@@ -9,7 +9,7 @@
 
   <ion-content has-bouncing="false" class="has-subheader has-header">
     <div class="list">
-      <a class="item" ng-click="selectCourse('{{course}}')" ng-repeat="course in courseCodes | filter:search">
+      <a class="item" ng-click="selectCourse('{{course}}')" collection-repeat="course in courseCodes | filter:search">
         {{course}}
       </a>
     </div>

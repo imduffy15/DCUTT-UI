@@ -33,7 +33,7 @@ angular.module('dcuttUiApp')
     	},
     	function() {
     		$scope.courseCodes();
-    		alert("Error retriving timetable");
+    		alert('Error retriving timetable');
     	}
     );
 
