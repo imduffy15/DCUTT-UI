@@ -10,7 +10,6 @@ cache:
     directories:
         - node_modules
         - bower_components
-- echo "Before install stage"
 install:
 - echo "Install stage"
 - sed -i -e "s/\$VERSIONCODE/$TRAVIS_BUILD_NUMBER/g" config.xml
