@@ -12,7 +12,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
 
   <!-- Make the status bar black with white text. -->
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!-- Customize home screen title. -->
   <meta name="apple-mobile-web-app-title" content="DCUTT">
@@ -114,15 +114,38 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+
+  <!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/ionic/js/ionic.js"></script>
+<script src="bower_components/ionic/js/ionic-angular.js"></script>
+<script src="bower_components/angular-promise-cache/angular-promise-cache.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<script src="cordova.js"></script>
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/config.js"></script>
+<script src="scripts/controllers/courseSelector.js"></script>
+<script src="scripts/controllers/timetable.js"></script>
+<script src="scripts/services/courseCode.js"></script>
+<script src="scripts/services/timetable.js"></script>
+<!-- endbuild -->
+
 </head>
 <body ng-app="dcuttUiApp">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
 <![endif]-->
-
-
-<div ng-view></div>
 
 <ion-nav-bar class="bar-balanced">
 </ion-nav-bar>
@@ -139,30 +162,5 @@
   ga('create', 'UA-36286955-1');
   ga('send', 'pageview');
 </script>
-
-<script>cordova.js</script>
-
-<!-- build:js(.) scripts/vendor.js -->
-<!-- bower:js -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/ionic/js/ionic.js"></script>
-<script src="bower_components/ionic/js/ionic-angular.js"></script>
-<script src="bower_components/angular-promise-cache/angular-promise-cache.js"></script>
-<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
-<script src="bower_components/moment/moment.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
-
-<!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/app.js"></script>
-<script src="scripts/config.js"></script>
-<script src="scripts/controllers/courseSelector.js"></script>
-<script src="scripts/controllers/timetable.js"></script>
-<script src="scripts/services/courseCode.js"></script>
-<script src="scripts/services/timetable.js"></script>
-<!-- endbuild -->
 </body>
 </html>

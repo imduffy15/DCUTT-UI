@@ -2,6 +2,6 @@
 
  angular.module('dcuttUiApp')
 
-.constant('ENV', {name:'production',apiEndpoint:'http://api.dcutt.com/v2'})
+.constant('ENV', {name:'development',apiEndpoint:'http://localhost:8080'})
 
 ;
