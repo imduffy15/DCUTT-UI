@@ -3,8 +3,8 @@ android:
   components:
   - platform-tools
   - tools
-  - build-tools-19.0.0
-  - android-19
+  - build-tools-22.0.0
+  - android-22
 sudo: false
 cache:
     directories:
@@ -23,9 +23,6 @@ script:
 - echo "Script stage"
 - grunt build
 - ionic platform add android
-- sed -i -e 's/MainActivity/DCUTT/g' platforms/android/AndroidManifest.xml
-- mv platforms/android/src/ie/ianduffy/DCUTT/MainActivity.java platforms/android/src/ie/ianduffy/DCUTT/DCUTT.java
-- sed -i -e 's/MainActivity/DCUTT/g' platforms/android/src/ie/ianduffy/DCUTT/DCUTT.java
 - ionic resources --splash
 - ionic resources --icon
 - ionic build --release android
