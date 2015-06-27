@@ -1,0 +1,17 @@
+<ion-view view-title="DCU Timetables">
+
+  <div class="list has-header">
+    <label class="item item-input item-dark">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="Find your course" ng-model="search">
+    </label>
+  </div>
+
+  <ion-content has-bouncing="false" class="has-subheader has-header">
+    <div class="list">
+      <a class="item" ng-click="selectCourse('{{course}}')" ng-repeat="course in courseCodes | filter:search">
+        {{course}}
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

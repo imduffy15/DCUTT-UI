@@ -1,0 +1,40 @@
+.item-dark select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  color: #fff;
+}
+
+.time-information {
+  text-align: center;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.module p {
+  color: #333;
+  margin: 0 0 2px !important;
+}
+
+.module h3 {
+  color: #333;
+}
+
+.item-dark h2 {
+  color: #fff;
+}
+
+.slider {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}

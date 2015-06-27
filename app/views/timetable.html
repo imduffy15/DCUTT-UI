@@ -1,0 +1,59 @@
+<ion-view view-title="{{coursecode}}">
+
+  <ion-nav-buttons side="primary">
+    <button class="button back-button buttons button-icon ion-arrow-left-c header-item" ng-click="courseCodes()">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content has-bouncing="false" on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()">
+    <div class="item item-dark">
+      <h2>{{dayName}} - {{date}}</h2>
+    </div>
+
+
+    <div class="list">
+      <div class="card" ng-repeat="module in timetable">
+        <div class="item item-text-wrap no-padding module"
+             ng-class="{
+                    'item-assertive': module.type == 'PRACTICAL',
+                    'item-calm': module.type == 'LECTURE',
+                    'item-energized': module.type == 'TUTORIAL',
+                    'item-royal': module.type == 'SEMINAR'
+                }">
+          <div class="row row-center">
+            <div class="col-20 time-information">
+              <p ng-bind="dateToTime(module.startTime)"></p>
+
+              <p>to
+
+              <p>
+
+              <p ng-bind="dateToTime(module.endTime)"></p>
+            </div>
+            <div class="col">
+              <p><span ng-bind="module.moduleCodes.join('/')"></span> {{module.type}}</p>
+
+              <h3 ng-bind="module.moduleDescription"></h3>
+
+              <p>Location: <span ng-bind="module.locations.join(', ')"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" ng-show="!timetable">
+        <div class="item item-stable item-text-wrap">
+          <div class="row row-center">
+            <div class="col-33">
+            </div>
+            <div class="col-33 time-information">
+              <h3>No class today</h3>
+            </div>
+            <div class="col-33">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
