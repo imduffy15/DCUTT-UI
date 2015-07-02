@@ -12,7 +12,7 @@ cache:
   - bower_components
 install:
 - echo "Install stage"
-- export PATH=.bin:$(npm bin):$PATH
+- export PATH=.bin:$(npm bin):$(find /usr/local/android-sdk/ -name zipalign -type f| head -1 | sed -e 's/\/zipalign//g'):$PATH
 - set-version.sh $TRAVIS_BUILD_NUMBER
 - npm install
 - bower install
