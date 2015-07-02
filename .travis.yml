@@ -12,7 +12,8 @@ cache:
   - bower_components
 install:
 - echo "Install stage"
-- export PATH=.bin:$(npm bin):$(find /usr/local/android-sdk/ -name zipalign -type f| head -1 | sed -e 's/\/zipalign//g'):$PATH
+- export PATH=.bin:$(npm bin):$(find /usr/local/android-sdk/ -name zipalign -type
+  f| head -1 | sed -e 's/\/zipalign//g'):$PATH
 - set-version.sh $TRAVIS_BUILD_NUMBER
 - npm install
 - bower install
@@ -22,7 +23,7 @@ script:
 - echo "Script stage"
 - build-android.sh
 after_success:
-- sign-apk.sh "release-key.keystore" "dcutt" "$STORE_PASSWORD" release.apk
+- sign-apk.sh "release-key.keystore" "dcutt" "$STORE_PASSWORD" DCUTT-$TRAVIS_BUILD_NUMBER.apk
 after_failure:
 - echo "After failure stage"
 after_script:
@@ -30,3 +31,10 @@ after_script:
 env:
   global:
     secure: bIsKBbVhTN8dOatgGD9mdQ3V+3zgQCVhuiCn2y2oX1IlTkG+ip1ORwRrzKF3yTdpwRbvr1ZZ04Y48pXdPVo9LNtsHukjBP1d/kxgYdRmjqvaioxe7hQ7NiLX7maU1qpbKuuzXSVJpUtXA9/GiMJnhM/xI6RdC20PnV+f7e5jQFg=
+deploy:
+  provider: releases
+  api_key:
+    secure: BbCWl+zO+6OqXANeaZOWt5lc3qyHOnoQE0mKBEa7UNthhkqLTIT2ojnCHildDT2aWK17vRsUUeQR+A1L0PNWIrVq/rHq5+y/ZPfnMNIehC1tfWLhyBP+bufLwN6Gj9AyU3/n1egWlA0TjMjsUF4dnc6IgT1tw3aBC25DGvX6sV8=
+  file: DCUTT-$TRAVIS_BUILD_NUMBER.apk
+  on:
+    repo: imduffy15/DCUTT-UI
