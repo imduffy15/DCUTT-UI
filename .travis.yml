@@ -30,11 +30,14 @@ after_script:
 - echo "After script stage"
 env:
   global:
-    secure: bIsKBbVhTN8dOatgGD9mdQ3V+3zgQCVhuiCn2y2oX1IlTkG+ip1ORwRrzKF3yTdpwRbvr1ZZ04Y48pXdPVo9LNtsHukjBP1d/kxgYdRmjqvaioxe7hQ7NiLX7maU1qpbKuuzXSVJpUtXA9/GiMJnhM/xI6RdC20PnV+f7e5jQFg=
+  - secure: bIsKBbVhTN8dOatgGD9mdQ3V+3zgQCVhuiCn2y2oX1IlTkG+ip1ORwRrzKF3yTdpwRbvr1ZZ04Y48pXdPVo9LNtsHukjBP1d/kxgYdRmjqvaioxe7hQ7NiLX7maU1qpbKuuzXSVJpUtXA9/GiMJnhM/xI6RdC20PnV+f7e5jQFg=
+  - secure: RRPll+aVYDScUzxlIRXXkoDBJD0+VGfrLCe1bPzHYiu3UfrTu7Svv7HmlAKyNh73MA02WrF276viU5NaALoEvE6MzxlK6NoHZugV/GZdHBjNsnllAzUv5TnkxRg3pfJwTiwdGUBlrPZEZCy9En0wNln/tEtkdqZBxgC7wK57/B0=
 deploy:
   provider: releases
   api_key:
     secure: BbCWl+zO+6OqXANeaZOWt5lc3qyHOnoQE0mKBEa7UNthhkqLTIT2ojnCHildDT2aWK17vRsUUeQR+A1L0PNWIrVq/rHq5+y/ZPfnMNIehC1tfWLhyBP+bufLwN6Gj9AyU3/n1egWlA0TjMjsUF4dnc6IgT1tw3aBC25DGvX6sV8=
   file: DCUTT-$TRAVIS_BUILD_NUMBER.apk
   on:
+    tags: true
+    all_branches: true
     repo: imduffy15/DCUTT-UI
