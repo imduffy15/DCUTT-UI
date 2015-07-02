@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('dcuttUiApp', ['ionic', 'LocalStorageModule', 'angular-promise-cache'])
+  .module('dcuttUiApp', ['ionic', 'tabSlideBox', 'LocalStorageModule', 'angular-promise-cache'])
 
   .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider, localStorageServiceProvider) {
 

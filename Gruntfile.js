@@ -55,8 +55,7 @@ module.exports = function (grunt) {
     manifest: {
       generate: {
         options: {
-          basePath: '<%= yeoman.dist %>/',
-          hash: true
+          basePath: '<%= yeoman.dist %>/'
         },
         src: [
           '**/*.*'

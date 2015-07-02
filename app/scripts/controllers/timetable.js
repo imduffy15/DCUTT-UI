@@ -3,33 +3,11 @@
 angular.module('dcuttUiApp')
   .controller('TimetableCtrl', function ($scope, $stateParams, $location, localStorageService, timetable) {
 
-    var handler = function (e) {
-      if (e.keyCode === 37) {
-        $scope.onSwipeRight();
-        $scope.$apply();
-      }
-      if (e.keyCode === 39) {
-        $scope.onSwipeLeft();
-        $scope.$apply();
-      }
-    };
-
-    var $doc = angular.element(document);
-
-    $doc.on('keydown', handler);
-    $scope.$on('$destroy', function () {
-      $doc.off('keydown', handler);
-    });
-
-
-    var timetableData = {};
-
     $scope.coursecode = $stateParams.coursecode.toUpperCase();
 
     timetable.get($stateParams.coursecode).then(
     	function (response) {
-      	timetableData = response.data;
-      	init(moment());
+      	$scope.timetable = response.data;
     	},
     	function() {
     		$scope.courseCodes();
@@ -37,18 +15,15 @@ angular.module('dcuttUiApp')
     	}
     );
 
-    $scope.onSwipeLeft = function () {
-      init(moment($scope.date, 'YYYY-MM-DD').add('d', 1));
+    $scope.prettyPrintDate = function (date) {
+    	console.log(date);
+      date = moment(Number(date));
+      return date.format('YYYY-MM-DD');
     };
 
-    $scope.onSwipeRight = function () {
-      init(moment($scope.date, 'YYYY-MM-DD').subtract('d', 1));
-    };
-
-    var init = function (date) {
-      $scope.date = date.format('YYYY-MM-DD');
-      $scope.dayName = date.format('dddd');
-      $scope.timetable = timetableData[date.valueOf()];
+    $scope.dateToDayName = function (date) {
+      date = moment(Number(date));
+      return date.format('dddd');
     };
 
     $scope.dateToTime = function (date) {

@@ -7,3 +7,4 @@ plugins/
 www
 bower_components
 .tmp
+*.apk

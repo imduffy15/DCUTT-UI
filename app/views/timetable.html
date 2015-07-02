@@ -5,14 +5,15 @@
     </button>
   </ion-nav-buttons>
 
-  <ion-content has-bouncing="false" on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()">
+<ion-slide-box show-pager="false">
+    <ion-slide collection-repeat="(date, day) in timetable">
+      <ion-content has-bouncing="false">
     <div class="item item-dark">
-      <h2>{{dayName}} - {{date}}</h2>
+      <h2><span ng-bind="dateToDayName(date)"></span> - <span ng-bind="prettyPrintDate(date)"></span></h2>
     </div>
 
-
     <div class="list">
-      <div class="card" ng-repeat="module in timetable">
+      <div class="card" ng-repeat="module in day">
         <div class="item item-text-wrap no-padding module"
              ng-class="{
                     'item-assertive': module.type == 'PRACTICAL',
@@ -54,6 +55,8 @@
         </div>
       </div>
     </div>
-
   </ion-content>
+
+    </ion-slide>
+</ion-slide-box>
 </ion-view>
