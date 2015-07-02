@@ -23,6 +23,7 @@ script:
 - echo "Script stage"
 - build-android.sh
 after_success:
+- push-release.sh
 - sign-apk.sh "release-key.keystore" "dcutt" "$STORE_PASSWORD" DCUTT-$TRAVIS_BUILD_NUMBER.apk
 after_failure:
 - echo "After failure stage"
