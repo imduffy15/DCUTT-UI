@@ -24,7 +24,7 @@ script:
 - build-android.sh
 after_success:
 - push-release.sh
-- sign-apk.sh "release-key.keystore" "dcutt" "$STORE_PASSWORD" DCUTT-$TRAVIS_BUILD_NUMBER.apk
+- sign-apk.sh "release-key.keystore" "dcutt" "$STORE_PASSWORD" "DCUTT-$TRAVIS_BUILD_NUMBER.apk"
 after_failure:
 - echo "After failure stage"
 after_script:
@@ -37,7 +37,7 @@ deploy:
   provider: releases
   api_key:
     secure: BbCWl+zO+6OqXANeaZOWt5lc3qyHOnoQE0mKBEa7UNthhkqLTIT2ojnCHildDT2aWK17vRsUUeQR+A1L0PNWIrVq/rHq5+y/ZPfnMNIehC1tfWLhyBP+bufLwN6Gj9AyU3/n1egWlA0TjMjsUF4dnc6IgT1tw3aBC25DGvX6sV8=
-  file: DCUTT-$TRAVIS_BUILD_NUMBER.apk
+  file: "DCUTT-$TRAVIS_BUILD_NUMBER.apk"
   on:
     tags: true
     all_branches: true
