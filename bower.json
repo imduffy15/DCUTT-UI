@@ -5,8 +5,7 @@
     "ionic": "imduffy15/ionic-bower#v1.0.0",
     "angular-promise-cache": "~0.0.12",
     "angular-local-storage": "~0.2.2",
-    "moment": "~2.10.3",
-    "tabbedSlideBox": "imduffy15/ionic-tabbed-slide-box"
+    "moment": "~2.10.3"
   },
   "appPath": "app",
   "moduleName": "dcuttUiApp",

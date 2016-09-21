@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.dcutt.app" version="1.0.0" versioncode="1" xmlns="http://www.w3.org/ns/widgets">
+<widget id="com.dcutt.app" version="1.0.$VERSIONCODE" versioncode="$VERSIONCODE" xmlns="http://www.w3.org/ns/widgets">
   <name>DCUTT</name>
   <description>
     DCU Timetable for the mobile platform.
