@@ -12,8 +12,8 @@ cache:
   - bower_components
 install:
 - echo "Install stage"
-- nvm install $NODE_VERSION
-- nvm use $NODE_VERSION
+- nvm install 0.12
+- nvm use 0.12
 - export PATH=.bin:$(npm bin):$(find /usr/local/android-sdk/ -name zipalign -type
   f| head -1 | sed -e 's/\/zipalign//g'):$PATH
 - set-version.sh $TRAVIS_BUILD_NUMBER
@@ -32,7 +32,6 @@ after_failure:
 after_script:
 - echo "After script stage"
 env:
-- NODE_VERSION="0.12"
   global:
   - secure: bIsKBbVhTN8dOatgGD9mdQ3V+3zgQCVhuiCn2y2oX1IlTkG+ip1ORwRrzKF3yTdpwRbvr1ZZ04Y48pXdPVo9LNtsHukjBP1d/kxgYdRmjqvaioxe7hQ7NiLX7maU1qpbKuuzXSVJpUtXA9/GiMJnhM/xI6RdC20PnV+f7e5jQFg=
   - secure: IWLRBWNx1qjaYI2ux0ZK8m5hSeaawgY1+WaJ6sPqHg+EkUnVevKZv2BW1lOFmT1am7MG+E4gMLmAy7Sq5ltk0pfDh4KWlxhiILVh1nNu4tzaVKVRlIeO5LUhYizC9xy1edfriKeNZTSX64oymmGArL2BYR3wCZjnzu24KFTimsM=
